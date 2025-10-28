@@ -1,0 +1,71 @@
+@charset "UTF-8";
+* {
+    margin: 0; padding: 0;
+    font-family: sans-serif;
+}
+body { background: #333; }
+header > img {width: 100%;}
+main, header {
+    width: 99%; max-width: 800px;
+    margin: 0 auto; 
+}
+main {
+    background: url("../img/koumori.webp") no-repeat top center / 300px auto,
+    url("../img/secret.svg") no-repeat bottom -16px center / 200px auto;
+}
+h1, h2 { font-weight: normal; color: white;}
+h1 { margin-bottom: 32px; font-size: 24px;}
+h2 { font-size: 20px; margin-bottom: 4px;}
+button {
+    box-sizing: border-box; 
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background: transparent;
+    color: white;
+    height: 28px; line-height: 28px;
+    width: 100%;
+    cursor: pointer;
+}
+section {
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+form {
+    display: block;
+    width: calc((100% - 6px) / 4);
+}
+.care {
+    border: .5px solid #FFF33F;
+    position: relative;
+    animation: glow 1.5s infinite ease-in-out;
+}
+@keyframes glow {
+    0%   { box-shadow: 0 0 2px #FFF33F, 0 0 5px #FFF33F; }
+    50%  { box-shadow: 0 0 10px #FFF33F, 0 0 20px #FFF33F; }
+    100% { box-shadow: 0 0 2px #FFF33F, 0 0 5px #FFF33F; }
+}
+.care::before {
+    position: absolute;
+    content: '';
+    border-color: transparent transparent transparent #FFF33F;
+    border-width: 11px 0px 11px 6px;
+    border-style: solid;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+}
+.care::after {
+    position: absolute;
+    content: '';
+    border-color: transparent transparent transparent #FFF33F;
+    border-width: 11px 0px 11px 6px;
+    border-style: solid;
+    top: 50%; right: 0;
+    transform: translateY(-50%) rotate(180deg);
+}
+.gray {
+    border: .5px solid #777;
+    color: #777;
+}
