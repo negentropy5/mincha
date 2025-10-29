@@ -77,8 +77,7 @@ const conversion = (str) => {
     len = str.length;
     sum += len;
     row++;
-    res = `😊｡oO( ${[ ...str].join(' ')} )_文字数(${len})_合計文字数(${sum})_発言数(${row})_${minu}分${sec}秒経過`;
-    return res;
+    return `😊｡oO( ${[ ...str].join(' ')} )_文字数(${len})_合計文字数(${sum})_発言数(${row})_${minu > 0 ? `${minu}分` : ''}${sec}秒経過`;
 }
 
 form.addEventListener('submit',e => {
@@ -132,3 +131,4 @@ nico.addEventListener('change', () => {
 h_name.addEventListener('input',()=>{
   localStorage.setItem(key, h_name.value);
 });
+
